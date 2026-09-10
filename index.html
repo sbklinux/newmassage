@@ -1,1 +1,237 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ada Pesan Buat Ghezya ❤️</title>
 
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    color: white;
+}
+
+.container {
+    width: 90%;
+    max-width: 430px;
+    text-align: center;
+}
+
+.card {
+    background: rgba(255,255,255,0.18);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 28px;
+    padding: 40px 25px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+}
+
+.icon {
+    font-size: 75px;
+    animation: pulse 1.5s infinite;
+}
+
+h1 {
+    font-size: 32px;
+    margin: 15px 0 10px;
+}
+
+.subtitle {
+    font-size: 17px;
+    opacity: 0.9;
+    line-height: 1.6;
+}
+
+button {
+    margin-top: 25px;
+    border: none;
+    background: white;
+    color: #ff4f81;
+    padding: 15px 28px;
+    border-radius: 50px;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+#pesan {
+    display: none;
+}
+
+.message {
+    text-align: left;
+    line-height: 1.8;
+    font-size: 16px;
+}
+
+.message h2 {
+    text-align: center;
+    font-size: 28px;
+}
+
+.signature {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.heart {
+    position: fixed;
+    bottom: -30px;
+    font-size: 22px;
+    animation: naik 5s linear forwards;
+    pointer-events: none;
+}
+
+@keyframes naik {
+    from {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes pulse {
+    0%,100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.12);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- HALAMAN AWAL -->
+    <div class="card" id="awal">
+        <div class="icon">💌</div>
+
+        <h1>Ada Pesan<br>Buat Kamu ❤️</h1>
+
+        <div class="subtitle">
+            Seseorang ingin menyampaikan sesuatu...
+        </div>
+
+        <button onclick="bukaPesan()">
+            💌 Buka Pesan
+        </button>
+    </div>
+
+
+    <!-- PESAN -->
+    <div class="card" id="pesan">
+
+        <div class="message">
+
+            <h2>Untuk Ghezya ❤️</h2>
+
+            <p>
+                Hai Ghezya...
+            </p>
+
+            <p>
+                Sebenarnya ada sesuatu yang ingin aku sampaikan
+                sejak lama.
+            </p>
+
+            <p>
+                Aku kangen kamu. 🥺❤️
+            </p>
+
+            <p>
+                Kadang aku tidak tahu bagaimana cara mengatakannya,
+                tapi setiap kali mengingat kamu, selalu ada rasa
+                hangat yang muncul.
+            </p>
+
+            <p>
+                Mungkin pesan ini sederhana, tapi aku ingin kamu tahu
+                bahwa kamu adalah seseorang yang spesial buat aku.
+            </p>
+
+            <p>
+                Semoga suatu hari nanti kita bisa bertemu,
+                ngobrol lebih lama, tertawa bersama,
+                dan membuat banyak cerita indah.
+            </p>
+
+            <p>
+                Jaga diri baik-baik ya, Ghezya. ❤️
+            </p>
+
+            <div class="signature">
+                ❤️ From someone who misses you ❤️
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+function bukaPesan() {
+
+    document.getElementById("awal").style.display = "none";
+
+    document.getElementById("pesan").style.display = "block";
+
+    buatHati();
+
+}
+
+function buatHati() {
+
+    setInterval(function() {
+
+        const heart = document.createElement("div");
+
+        heart.className = "heart";
+
+        heart.innerHTML = "❤️";
+
+        heart.style.left = Math.random() * 100 + "vw";
+
+        heart.style.animationDuration =
+            (3 + Math.random() * 4) + "s";
+
+        document.body.appendChild(heart);
+
+        setTimeout(function() {
+            heart.remove();
+        }, 7000);
+
+    }, 350);
+
+}
+
+</script>
+
+</body>
+</html>
